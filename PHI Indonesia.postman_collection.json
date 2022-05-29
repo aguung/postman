@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "25a55b96-fa06-41f4-a6b9-d9afa40735dd",
+		"name": "PHI Indonesia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8376320"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Not Registered",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "uid",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"This new user\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Registered",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "uid",
+											"value": "test",
+											"description": "Mandatory",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"description": "Mandatory",
+											"type": "text"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"This user already registered\",\n    \"data\": {\n        \"name\":\"test\",\n        \"phone\":\"1212\",\n        \"photo\":\"\",\n        \"token\":\"\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Succes Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "uid",
+											"value": "test",
+											"description": "Mandatory",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"description": "Mandatory",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "name",
+											"description": "Mandatory",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "123",
+											"description": "Mandatory",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": []
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Succces Register\",\n    \"data\": {\n        \"name\":\"test\",\n        \"phone\":\"1212\",\n        \"photo\":\"\",\n        \"token\":\"\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Service",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer asdasd",
+										"type": "text"
+									}
+								]
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Succes get service\",\n    \"data\": [\n        {\n            \"id\":1,\n            \"name\":\"name\",\n            \"icon\":\"url\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Detail Service",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Detail Service",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer asdasd",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "service",
+											"value": "11",
+											"description": "Mandatory",
+											"type": "text"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Succes get detail service\",\n    \"data\": [\n        {\n            \"id\":1,\n            \"name\":\"name\",\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Service Price",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Service Price",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer asdasd",
+										"type": "text"
+									}
+								]
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Succes get service price\",\n    \"data\": [\n        {\n            \"id\":1,\n            \"name\":\"name\",\n            \"product\":\"product\",\n            \"unit\":\"unit\",\n            \"price\":\"price\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Problem",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Problem Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer asdasd",
+										"type": "text"
+									}
+								]
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Succes get problem\",\n    \"data\": [\n        {\n            \"id\":1,\n            \"name\":\"name\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
